@@ -1,9 +1,15 @@
 {
   "name": "react-ppm",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A React PPM component for use with Web Audio API",
 	"license": "MIT",
-	"repository": "larsvinter/react-ppm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larsvinter/react-ppm"
+  },
+  "bugs": {
+    "url": "https://github.com/larsvinter/react-ppm"
+  },
 	"author": {
 		"name": "Lars Vinter",
 		"email": "larsvinter@hotmail.com"
