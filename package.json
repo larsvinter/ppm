@@ -1,6 +1,13 @@
 {
   "name": "react-ppm",
   "version": "0.1.0",
+  "description": "A React PPM component for use with Web Audio API",
+	"license": "MIT",
+	"repository": "larsvinter/react-ppm",
+	"author": {
+		"name": "Lars Vinter",
+		"email": "larsvinter@hotmail.com"
+	},
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -36,5 +43,9 @@
     "presets": [
       "@babel/preset-react"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-react": "^7.8.3"
   }
 }
