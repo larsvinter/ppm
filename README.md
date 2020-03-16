@@ -1,68 +1,221 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React PPM Component
 
-## Available Scripts
+`react-ppm` is a performant React Component that renders an animated Peak Programme Meter (PPM) for a connected Web Audio API webaudioNode.
 
-In the project directory, you can run:
+[<img width="400" alt="react-awesome-button demo" src="https://github.com/rcaferati/react-awesome-button/blob/master/demo/public/images/theme-set.gif?raw=true">](https://caferati.me/demo/react-awesome-button)
 
-### `yarn start`
+## Key Features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 60fps PPM
+- Integration time of <5 ms
+- Return time of 20 dB in 1.7 s
+- Follows standard IEC 60268-18 and EBU R.68
+- Look and feel customisable and extendable via **CSS custom properties** 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Live demo
 
-### `yarn test`
+Checkout the live demo with the `CSS customizer` at my <a title="React Awesome Button - CSS Customizer" href="https://caferati.me/demo/react-awesome-button" target="_blank">web portfolio</a> page.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[<img src="https://github.com/rcaferati/react-awesome-button/blob/master/demo/public/images/react-awesome-button-customizer.png?raw=true" width="800" />](https://caferati.me/demo/react-awesome-button)
 
-### `yarn build`
+You can run this demo locally on `8080` by cloning this repository and running `npm start`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Storybook
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Checkout the `Storybook` at my <a title="React Awesome Button - CSS Customizer" href="https://caferati.me/demo/react-awesome-button/storybook" target="_blank">web portfolio</a> page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[<img src="https://github.com/rcaferati/react-awesome-button/blob/master/demo/public/images/react-awesome-button-storybook.png?raw=true" width="800" />](https://caferati.me/demo/react-awesome-button/storybook)
 
-### `yarn eject`
+## Figma File
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Import it directly into your [Figma](https://www.figma.com/file/Ug8sNPzmevU3ZQus9Klu5aHq/react-awesome-button-theme-blue) project.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[<img src="https://github.com/rcaferati/react-awesome-button/blob/master/demo/public/images/figma.png?raw=true" width="800" />](https://www.figma.com/file/Ug8sNPzmevU3ZQus9Klu5aHq/react-awesome-button-theme-blue)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can run the storybook locally on `6006` by cloning this repository and running `npm run storybook`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Installation
 
-## Learn More
+```
+npm install --save react-awesome-button
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Styling with plain CSS and CSS Modules
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Plain CSS
 
-### Code Splitting
+```jsx
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+function Button() {
+  return <AwesomeButton type="primary">Button</AwesomeButton>;
+}
+```
 
-### Analyzing the Bundle Size
+### CSS Modules
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```jsx
+import { AwesomeButton } from "react-awesome-button";
+import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
 
-### Making a Progressive Web App
+function Button() {
+  return (
+    <AwesomeButton cssModule={AwesomeButtonStyles} type="primary">
+      Button
+    </AwesomeButton>
+  );
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### `AwesomeButton` rendered with a button tag
 
-### Advanced Configuration
+Renders the component with a `Button` tag and an onPress prop called on animation release.
+Checkout this example live on the [storyboard](https://caferati.me/demo/react-awesome-button/storybook/?selectedKind=AwesomeButton&selectedStory=Primary).
+```jsx
+import { AwesomeButton } from "react-awesome-button";
+import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+function Button() {
+  return (
+    <AwesomeButton
+      cssModule={AwesomeButtonStyles}
+      type="primary"
+      ripple
+      onPress={() => {
+        // do something
+      }}
+    >
+      Button
+    </AwesomeButton>
+  );
+}
+```
 
-### Deployment
+### `AwesomeButton` rendered with an anchor tag
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Render the component with an `anchor` tag setting the href and target attributes.
 
-### `yarn build` fails to minify
+Checkout this example live on the [storyboard](https://caferati.me/demo/react-awesome-button/storybook/?selectedKind=AwesomeButton&selectedStory=Link).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```jsx
+import { AwesomeButton } from "react-awesome-button";
+import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
+
+function Button() {
+  return (
+    <AwesomeButton
+      cssModule={AwesomeButtonStyles}
+      type="primary"
+      href="https://google.com"
+      target="_blank"
+    >
+      Button
+    </AwesomeButton>
+  );
+}
+```
+
+### `AwesomeButton` props
+
+| Attribute |    Type    |  Default  | Description                                                                                              |
+| :-------- | :--------: | :-------: | :------------------------------------------------------------------------------------------------------- |
+| type      |  `string`  | `primary` | Render a specific button type, styled by the .scss type list                                             |
+| size      |  `string`  |  `auto`   | Render a specific button size, styled by the .scss size list                                             |
+| element   |   `node`   |  `null`   | Overwrites the default container element renderer, useful for using it with react-router Link component. |
+| disabled  |   `bool`   |  `false`  | Should render a disabled button                                                                          |
+| visible   |   `bool`   |  `true`   | Should the button be visible                                                                             |
+| ripple    |   `bool`   |  `false`  | Should render the animated ripple effect                                                                 |
+| onPress   | `function` |  `null`   | Default click/press function                                                                             |
+| href      |  `string`  |  `null`   | Forces the button to be rendered on an `anchor` container and sets the href to the specified value       |
+| target    |  `string`  |  `null`   | When used together with `href` renders an anchor with a specific target attribute                        |
+
+### `AwesomeButtonProgress` basic example
+
+Checkout this example live on the [storyboard](https://caferati.me/demo/react-awesome-button/storybook/?selectedKind=AwesomeButtonProgress&selectedStory=Success).
+
+```jsx
+  import { AwesomeButtonProgress } from 'react-awesome-button';
+  import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
+
+  function Button() {
+    return (
+      <AwesomeButtonProgress
+        cssModule={AwesomeButtonStyles}
+        type="primary"
+        onPress={next => {
+          // do a sync/async task then call `next()`
+        }}
+      >
+        Button
+      </AwesomeButtonProgress>
+    );
+  }
+```
+
+### `AwesomeButtonProgress` specific props
+
+Being a wrapper on the **`AwesomeButton`** component, it accepts its props plus the following ones.
+
+| Attribute    |   Type    |  Default  | Description                                                 |
+| :----------- | :-------: | :-------: | :---------------------------------------------------------- |
+| loadingLabel | `string`  | `Wait ..` | Progress button loading label text                          |
+| resultLabel  | `string`  | `Success` | Progress button success label text                          |
+| releaseDelay | `number`  |    500    | Delay for releasing the button after the progress animation |
+| fakePress    | `boolean` |  `false`  | When set to `true` triggers a fake button press             |
+
+### `AwesomeButtonSocial` basic example
+
+Checkout this example live on the [storyboard](https://caferati.me/demo/react-awesome-button/storybook/?selectedKind=AwesomeButtonSocial&selectedStory=Facebook).
+
+```jsx
+  import { AwesomeButtonSocial } from 'react-awesome-button';
+  import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
+
+  function Button() {
+    return (
+      <AwesomeButtonSocial
+        cssModule={AwesomeButtonStyles}
+        type="facebook"
+        url="https://caferati.me"
+      >
+        Button
+      </AwesomeButton>
+    );
+  }
+```
+
+### `AwesomeButtonSocial` specific props
+
+Being a wrapper on the **`AwesomeButton`** component, it accepts its props plus the following ones.
+
+| Attribute    |   Type    |  Default  | Description                                                 |
+| :----------- | :-------: | :-------: | :---------------------------------------------------------- |
+| type         | `string`  | `primary` | Render a specific button type. Bundled with Facebook, Instagram, Twitter, Github, Youtube, Linkedin, Pinterest, Reddit, Messenger, Whatsapp and Google Plus (RIP) types and share methods |
+| icon         | `bool`    | `false`   | Should render the social icon relative to the button type |
+| iconHeight   | `number`  | `23`      | Rendered icon height |
+| icon         | `number`  | `30`      | Rendered icon width |
+| url          | `string`  | `null`    | Url string to be used on the sharer |
+| image        | `string`  | `null`    | Image url to be rendered on the sharer |
+| message      | `string`  | `null`    | Message string to be rendered on the share post |
+| phone        | `string`  | `null`    | Phone number to be used when using the Whatsapp sharer |
+| user         | `string`  | `null`    | Username to be redirected to when using the Messenger sharer |
+
+
+## React Native Version
+
+Checkout the React Native version of the Awesome Button UI Component at [rcaferati/react-native-really-awesome-button](https://github.com/rcaferati/react-native-really-awesome-button)
+
+<img width="280" src='https://raw.githubusercontent.com/rcaferati/react-native-really-awesome-button/master/demo/demo-button-cartman.gif?raw=true' />
+
+## Author
+
+#### Rafael Caferati
+
+- Checkout my <a href="https://caferati.me" title="Full-Stack Web Developer, UI/UX Javascript Specialist" target="_blank">Full-Stack Web Developer Website</a>
+- Other open source projects @ <a title="Web Software Developer Code Laboratory" target="_blank" href="https://caferati.me/labs">Code Laboratory</a>
+- A scope of my work @ <a title="Web Software Developer Portfolio" target="_blank" href="https://caferati.me/portfolio">Web Developer Portfolio</a>
+
+## License
+
+MIT. Copyright (c) 2019 Rafael Caferati.
