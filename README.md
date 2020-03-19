@@ -37,36 +37,9 @@ You can run the storybook locally on `6006` by cloning this repository and runni
 ## Installation
 
 ```
-npm install --save react-awesome-button
+yarn add react-ppm
 ```
 
-## Styling with plain CSS and CSS Modules
-
-### Plain CSS
-
-```jsx
-import { AwesomeButton } from "react-awesome-button";
-import "react-awesome-button/dist/styles.css";
-
-function Button() {
-  return <AwesomeButton type="primary">Button</AwesomeButton>;
-}
-```
-
-### CSS Modules
-
-```jsx
-import { AwesomeButton } from "react-awesome-button";
-import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
-
-function Button() {
-  return (
-    <AwesomeButton cssModule={AwesomeButtonStyles} type="primary">
-      Button
-    </AwesomeButton>
-  );
-}
-```
 
 ### `AwesomeButton` rendered with a button tag
 
@@ -92,29 +65,6 @@ function Button() {
 }
 ```
 
-### `AwesomeButton` rendered with an anchor tag
-
-Render the component with an `anchor` tag setting the href and target attributes.
-
-Checkout this example live on the [storyboard](https://caferati.me/demo/react-awesome-button/storybook/?selectedKind=AwesomeButton&selectedStory=Link).
-
-```jsx
-import { AwesomeButton } from "react-awesome-button";
-import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss";
-
-function Button() {
-  return (
-    <AwesomeButton
-      cssModule={AwesomeButtonStyles}
-      type="primary"
-      href="https://google.com"
-      target="_blank"
-    >
-      Button
-    </AwesomeButton>
-  );
-}
-```
 
 ### `AwesomeButton` props
 
@@ -130,92 +80,7 @@ function Button() {
 | href      |  `string`  |  `null`   | Forces the button to be rendered on an `anchor` container and sets the href to the specified value       |
 | target    |  `string`  |  `null`   | When used together with `href` renders an anchor with a specific target attribute                        |
 
-### `AwesomeButtonProgress` basic example
-
-Checkout this example live on the [storyboard](https://caferati.me/demo/react-awesome-button/storybook/?selectedKind=AwesomeButtonProgress&selectedStory=Success).
-
-```jsx
-  import { AwesomeButtonProgress } from 'react-awesome-button';
-  import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
-
-  function Button() {
-    return (
-      <AwesomeButtonProgress
-        cssModule={AwesomeButtonStyles}
-        type="primary"
-        onPress={next => {
-          // do a sync/async task then call `next()`
-        }}
-      >
-        Button
-      </AwesomeButtonProgress>
-    );
-  }
-```
-
-### `AwesomeButtonProgress` specific props
-
-Being a wrapper on the **`AwesomeButton`** component, it accepts its props plus the following ones.
-
-| Attribute    |   Type    |  Default  | Description                                                 |
-| :----------- | :-------: | :-------: | :---------------------------------------------------------- |
-| loadingLabel | `string`  | `Wait ..` | Progress button loading label text                          |
-| resultLabel  | `string`  | `Success` | Progress button success label text                          |
-| releaseDelay | `number`  |    500    | Delay for releasing the button after the progress animation |
-| fakePress    | `boolean` |  `false`  | When set to `true` triggers a fake button press             |
-
-### `AwesomeButtonSocial` basic example
-
-Checkout this example live on the [storyboard](https://caferati.me/demo/react-awesome-button/storybook/?selectedKind=AwesomeButtonSocial&selectedStory=Facebook).
-
-```jsx
-  import { AwesomeButtonSocial } from 'react-awesome-button';
-  import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
-
-  function Button() {
-    return (
-      <AwesomeButtonSocial
-        cssModule={AwesomeButtonStyles}
-        type="facebook"
-        url="https://caferati.me"
-      >
-        Button
-      </AwesomeButton>
-    );
-  }
-```
-
-### `AwesomeButtonSocial` specific props
-
-Being a wrapper on the **`AwesomeButton`** component, it accepts its props plus the following ones.
-
-| Attribute    |   Type    |  Default  | Description                                                 |
-| :----------- | :-------: | :-------: | :---------------------------------------------------------- |
-| type         | `string`  | `primary` | Render a specific button type. Bundled with Facebook, Instagram, Twitter, Github, Youtube, Linkedin, Pinterest, Reddit, Messenger, Whatsapp and Google Plus (RIP) types and share methods |
-| icon         | `bool`    | `false`   | Should render the social icon relative to the button type |
-| iconHeight   | `number`  | `23`      | Rendered icon height |
-| icon         | `number`  | `30`      | Rendered icon width |
-| url          | `string`  | `null`    | Url string to be used on the sharer |
-| image        | `string`  | `null`    | Image url to be rendered on the sharer |
-| message      | `string`  | `null`    | Message string to be rendered on the share post |
-| phone        | `string`  | `null`    | Phone number to be used when using the Whatsapp sharer |
-| user         | `string`  | `null`    | Username to be redirected to when using the Messenger sharer |
-
-
-## React Native Version
-
-Checkout the React Native version of the Awesome Button UI Component at [rcaferati/react-native-really-awesome-button](https://github.com/rcaferati/react-native-really-awesome-button)
-
-<img width="280" src='https://raw.githubusercontent.com/rcaferati/react-native-really-awesome-button/master/demo/demo-button-cartman.gif?raw=true' />
-
-## Author
-
-#### Rafael Caferati
-
-- Checkout my <a href="https://caferati.me" title="Full-Stack Web Developer, UI/UX Javascript Specialist" target="_blank">Full-Stack Web Developer Website</a>
-- Other open source projects @ <a title="Web Software Developer Code Laboratory" target="_blank" href="https://caferati.me/labs">Code Laboratory</a>
-- A scope of my work @ <a title="Web Software Developer Portfolio" target="_blank" href="https://caferati.me/portfolio">Web Developer Portfolio</a>
 
 ## License
 
-MIT. Copyright (c) 2019 Rafael Caferati.
+MIT. Copyright (c) 2020 Lars Vinter. Created with passion during the 2020 lockdown.
